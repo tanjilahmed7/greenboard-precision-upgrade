@@ -10,10 +10,10 @@ const Footer = () => {
           {/* Company Info */}
           <div className="lg:col-span-1">
             <div className="flex items-center gap-4 mb-6">
-              <Logo size="md" className="filter brightness-0 invert" />
+              <Logo size="lg" variant="white" />
               <div>
-                <h3 className="font-bold text-xl">Green Board</h3>
-                <p className="text-sm opacity-75">Architect-Grade Boards</p>
+                <h3 className="font-bold text-xl text-background">Green Board</h3>
+                <p className="text-sm text-background/75">Architect-Grade Boards</p>
               </div>
             </div>
             <p className="text-background/80 mb-6 leading-relaxed">

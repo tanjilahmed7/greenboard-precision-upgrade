@@ -1,14 +1,17 @@
 interface LogoProps {
   className?: string;
   size?: "sm" | "md" | "lg";
+  variant?: "default" | "white";
 }
 
-const Logo = ({ className = "", size = "md" }: LogoProps) => {
+const Logo = ({ className = "", size = "md", variant = "default" }: LogoProps) => {
   const sizeClasses = {
     sm: "w-8 h-8",
     md: "w-12 h-12",
     lg: "w-16 h-16"
   };
+  
+  const isWhite = variant === "white";
 
   return (
     <div className={`${sizeClasses[size]} ${className}`}>
@@ -22,8 +25,8 @@ const Logo = ({ className = "", size = "md" }: LogoProps) => {
           cx="60"
           cy="60"
           r="58"
-          fill="hsl(var(--primary))"
-          stroke="hsl(var(--primary-light))"
+          fill={isWhite ? "white" : "hsl(var(--primary))"}
+          stroke={isWhite ? "rgba(255,255,255,0.8)" : "hsl(var(--primary-light))"}
           strokeWidth="2"
         />
         
@@ -35,21 +38,21 @@ const Logo = ({ className = "", size = "md" }: LogoProps) => {
             y="35"
             width="4"
             height="25"
-            fill="hsl(var(--primary-foreground))"
+            fill={isWhite ? "hsl(var(--primary))" : "hsl(var(--primary-foreground))"}
             rx="2"
           />
           
           {/* Leaves/Branches */}
           <path
             d="M-15 15 Q-20 5 -15 0 Q-10 5 -5 10 Q0 5 5 10 Q10 5 15 0 Q20 5 15 15 Q10 20 5 25 Q0 30 -5 25 Q-10 20 -15 15 Z"
-            fill="hsl(var(--primary-foreground))"
+            fill={isWhite ? "hsl(var(--primary))" : "hsl(var(--primary-foreground))"}
             opacity="0.9"
           />
           
           {/* Central leaf detail */}
           <path
             d="M-8 18 Q0 12 8 18 Q0 25 -8 18 Z"
-            fill="hsl(var(--primary))"
+            fill={isWhite ? "white" : "hsl(var(--primary))"}
             opacity="0.3"
           />
           
@@ -59,7 +62,7 @@ const Logo = ({ className = "", size = "md" }: LogoProps) => {
             cy="20"
             rx="6"
             ry="8"
-            fill="hsl(var(--primary-foreground))"
+            fill={isWhite ? "hsl(var(--primary))" : "hsl(var(--primary-foreground))"}
             opacity="0.7"
             transform="rotate(-30)"
           />
@@ -68,7 +71,7 @@ const Logo = ({ className = "", size = "md" }: LogoProps) => {
             cy="20"
             rx="6"
             ry="8"
-            fill="hsl(var(--primary-foreground))"
+            fill={isWhite ? "hsl(var(--primary))" : "hsl(var(--primary-foreground))"}
             opacity="0.7"
             transform="rotate(30)"
           />
@@ -82,7 +85,7 @@ const Logo = ({ className = "", size = "md" }: LogoProps) => {
             textAnchor="middle"
             fontSize="10"
             fontWeight="bold"
-            fill="hsl(var(--primary-foreground))"
+            fill={isWhite ? "hsl(var(--primary))" : "hsl(var(--primary-foreground))"}
             fontFamily="system-ui, -apple-system, sans-serif"
             letterSpacing="0.5px"
           >
