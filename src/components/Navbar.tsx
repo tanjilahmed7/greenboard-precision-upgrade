@@ -2,6 +2,7 @@ import { useState } from "react";
 import { Search, Globe, Menu, Phone, MessageCircle } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
+import Logo from "@/components/Logo";
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -32,10 +33,8 @@ const Navbar = () => {
         {/* Main navigation */}
         <div className="flex items-center justify-between py-4">
           {/* Logo */}
-          <div className="flex items-center gap-3">
-            <div className="w-10 h-10 bg-primary rounded-lg flex items-center justify-center">
-              <span className="text-primary-foreground font-bold text-lg">GB</span>
-            </div>
+          <div className="flex items-center gap-4">
+            <Logo size="md" />
             <div>
               <h1 className="font-bold text-xl text-foreground">Green Board</h1>
               <p className="text-xs text-muted-foreground">Architect-Grade Boards</p>

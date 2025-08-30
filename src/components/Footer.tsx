@@ -1,4 +1,5 @@
 import { Facebook, Instagram, Linkedin, Youtube, Mail, Phone, MapPin } from "lucide-react";
+import Logo from "@/components/Logo";
 
 const Footer = () => {
   return (
@@ -8,10 +9,8 @@ const Footer = () => {
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 py-16">
           {/* Company Info */}
           <div className="lg:col-span-1">
-            <div className="flex items-center gap-3 mb-6">
-              <div className="w-10 h-10 bg-primary rounded-lg flex items-center justify-center">
-                <span className="text-primary-foreground font-bold text-lg">GB</span>
-              </div>
+            <div className="flex items-center gap-4 mb-6">
+              <Logo size="md" className="filter brightness-0 invert" />
               <div>
                 <h3 className="font-bold text-xl">Green Board</h3>
                 <p className="text-sm opacity-75">Architect-Grade Boards</p>
